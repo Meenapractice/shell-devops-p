@@ -1,3 +1,5 @@
+#!/bin/bash
+
 NUM1=$1
 NUM2=$2
 
