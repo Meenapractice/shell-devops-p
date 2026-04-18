@@ -7,24 +7,27 @@ if [ $USERID -ne 0 ]; then
   exit 1
 fi
 
-dnf install nginx
+dnf install nginx -y
 if [ $? -ne 0 ]; then
-  echo "Nginx not installed..Installing..SUCESS"
+  echo "Nginx installed..FAILURE"
+  exit 1
 else
-  echo "Nginx already installed.. FAILURE"
+  echo "Nginx installing..SUCESS"
 fi
 
-dnf install mysql
+dnf install mysql -y
 if [ $? -ne 0 ]; then
-  echo "mysql not installed..Installing..SUCESS"
+  echo "mysql installed..FAILURE"
+  exit 1
 else
-  echo "mysql already installed.. FAILURE"
+  echo "mysql installing..SUCESS"
 fi
 
-dnf install nodejs
+dnf install nodejs -y
 if [ $? -ne 0 ]; then
-  echo "nodejs not installed..Installing..SUCESS"
+ echo "mysql installed..FAILURE"
+  exit 1
 else
-  echo "nodejs already installed.. FAILURE"
+  echo "mysql installing..SUCESS"
 fi
 
