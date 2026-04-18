@@ -3,6 +3,7 @@ NUM2=$2
 
 if [ $# -ne 2 ]; then
   echo "2 arguments are required"
+  exit 1
 fi
 
 if [ $NUM1 -lt $NUM2 ]; then
