@@ -2,7 +2,7 @@
 
 set -e
 
-trap "echo 'There is an error in $BASH_COMMAND'" ERR
+trap "echo 'There is an error in $LINENO: $BASH_COMMAND | tee -a $LOGS_FILE'" ERR
 
 USERID=$(id -u)
 LOGS_FOLDER="/home/ec2-user/repos/shell-devops-p"
@@ -22,8 +22,7 @@ fi
 
 
 for package in $@; do
-  dnf list installed $package &>>$LOGS_FILE
-  if [ $? -ne 0 ]; then
+  if ! dnf list installed $package &>>$LOGS_FILE; then
     echo -e "$package not installed..$G Installing now $N" | tee -a $LOGS_FILE
     dnf install $package -y &>>$LOGS_FILE
     exit 1
