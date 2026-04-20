@@ -22,10 +22,10 @@ fi
 
 
 for package in $@; do
-  dnf list installed $package &>>LOGS_FILE
+  dnf list installed $package &>>$LOGS_FILE
   if [ $? -ne 0 ]; then
     echo -e "$package not installed..$G Installing now $N" | tee -a $LOGS_FILE
-    dnf install $package -y &>>LOGS_FILE
+    dnf install $package -y &>>$LOGS_FILE
     exit 1
   else
     echo -e "$package already installed..$Y SKIPPING $N" | tee -a $LOGS_FILE
