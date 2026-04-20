@@ -17,6 +17,7 @@ VALIDATE() {
         exit 1
     else
         echo "Installing $2.... SUCCESS" | tee -a $LOGS_FILE
+    fi
 }
 
 for package in $@; do
