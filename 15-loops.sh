@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=$(id -u)
+USERID="$(id -u)"
 LOGS_FOLDER="/home/ec2-user/repos/shell-devops-p"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
 
