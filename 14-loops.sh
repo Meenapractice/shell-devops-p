@@ -21,7 +21,7 @@ VALIDATE() {
 }
 
 for package in "$@"; do
-   dnf install @package -y
-   VALIDATE $? @package
+   dnf install $package -y
+   VALIDATE $? $package
 done
    
