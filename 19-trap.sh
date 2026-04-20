@@ -2,7 +2,7 @@
 
 set -e
 
-trap "echo 'There is an error is line number $LINENO: command is $BASHCMD'" ERR
+trap "echo 'There is an error is line number $LINENO: command is $BASH_COMMAND'" ERR
 
 echo "I am first line"
 echoo "there is error in my line"
